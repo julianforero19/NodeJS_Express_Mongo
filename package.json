@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/julianforero19/NodeJS_Express_Mongo/issues"
   },
-  "homepage": "https://github.com/julianforero19/NodeJS_Express_Mongo#readme"
+  "homepage": "https://github.com/julianforero19/NodeJS_Express_Mongo#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
