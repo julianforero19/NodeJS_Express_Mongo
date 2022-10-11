@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,6 @@
   },
   "homepage": "https://github.com/julianforero19/NodeJS_Express_Mongo#readme",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.15"
   }
 }
