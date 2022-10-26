@@ -1,14 +1,20 @@
-const http = require('http');
+const express = require ('express');
+const mongoose = require ('mongoose');
 
-const hostname = "localhost";
-const port = '3000';
+// Conexion a la base de datos mongodb
+mongoose.connect('mongodb://localhost:27017/userscoursesdb',{useNewUrlParser:true, useUnifiedTopology: true})
+    .then(() => console.log('Conectado a MongoDB...'))
+    .catch(err => console.log('No se pudo conectar con MongoDB...',err));
 
-const server =http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader ('Content-Type','text/plain');
-    res.end ('Hello, World!\n');
-});
 
-server.listen(port, hostname, ()=>{
-    console.log(`Server runnin at http://${hostname}:${port}/`);
-});
+//MIDDLEWARE
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Api REST Ok, y ejecutandose...');
+})
