@@ -15,11 +15,11 @@ const usuarioSchema = new mongoose.Schema({
     },
     estado:{
         type:String,
-        required:true
+        default:true
     },
     imagen: {
         type:String,
-        required:true
+        required:false
     }
 
 });

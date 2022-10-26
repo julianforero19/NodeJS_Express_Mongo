@@ -9,7 +9,7 @@ const schema = Joi.object({
     .min(3)
     .max(30)
     .required()
-    .pattern(/^[A-Za-záéíóú]{3,30}$/),
+    .pattern(/^[ A-Za-záéíóú ]{3,30}$/),
 
     password: Joi.string()
     .pattern (/^[a-zA-Z0-9]{3,30}$/),
