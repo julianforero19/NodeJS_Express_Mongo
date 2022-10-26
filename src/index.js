@@ -1,3 +1,7 @@
+const usuarios = require('./controllers/usuarios');
+const cursos = require('./controllers/cursos');
+
+
 const express = require ('express');
 const mongoose = require ('mongoose');
 
@@ -13,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 //end points (recursos)
-app.use('/api/usuarios', usuarios);
+app.use('/api/usuarios',usuarios);
 app.use('/api/cursos', cursos);
 
 const port = process.env.PORT || 3000;
