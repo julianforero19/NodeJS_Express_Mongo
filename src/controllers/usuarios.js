@@ -78,13 +78,14 @@ ruta.delete('/:email',(req, res)=>{
 //Funcion asincrona para listar todos los usuarios activos
 async function listarUsuarioActivos(){
     let usuarios = await Usuario.find({"estado": true});
+    return usuarios;
 }
 
 //Endpoint de tipo GET para el recurso usuarios. lista todos los usuarios
 ruta.get ('/',(req, res)=>{
     let resultado = listarUsuarioActivos();
     resultado.then(usuarios => {
-        resjson(usuarios)
+        res.json(usuarios)
     }).catch(err=> {
         res.status(400).json(
             {
