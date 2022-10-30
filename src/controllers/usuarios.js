@@ -1,6 +1,7 @@
 const express = require ('express');
 const Usuario = require ('../models/usuario_model');
 const Joi = require('@hapi/joi');
+const { json } = require('express');
 const ruta = express.Router();
 
 //validaciones para el objeto usuario
@@ -75,6 +76,25 @@ ruta.delete('/:email',(req, res)=>{
             err
         })
     });
+});
+
+//Funcion asincrona para listar todos los usuarios activos
+async function listarUsuarioActivos(){
+    let usuarios = await Usuario.find({"estado": true});
+}
+
+//Endpoint de tipo GET para el recurso usuarios. lista todos los usuarios
+ruta.get ('/',(req, res)=>{
+    let resultado = listarUsuarioActivos();
+    resultado.then(usuarios => {
+        resjson(usuarios)
+    }).catch(err=> {
+        res.status(400).json(
+            {
+                err
+            }
+        )
+    })
 });
 
 module.exports = ruta;
