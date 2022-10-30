@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index_nodemon.js",
     "dev2": "nodemon src/index_express.js",
-    "dev3": "nodemon src/index.js"
+    "dev3": "nodemon src/index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
