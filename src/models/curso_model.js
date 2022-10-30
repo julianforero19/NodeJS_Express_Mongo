@@ -11,7 +11,7 @@ const cursoSchema = new mongoose.Schema({
     },
     estado:{
         type: Boolean,
-        required : true
+        default : true
     },
     imagen : {
         type: String,
