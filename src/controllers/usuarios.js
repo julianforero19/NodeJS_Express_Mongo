@@ -8,7 +8,7 @@ ruta.post('/',(req, res)=>{
 
 const {error, value} = logic.schema.validate({nombre: body.nombre, email: body.email});
 if(!error){
-    let resultado = crearUsuario(body);
+    let resultado = logic.crearUsuario(body);
 
     resultado.then( user => {
         res.json({
