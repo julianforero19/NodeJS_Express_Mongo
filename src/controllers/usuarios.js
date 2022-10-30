@@ -19,9 +19,6 @@ const schema = Joi.object({
     .email({minDomainSegments: 2, tlds: {allow:['com','net','edu','co']}})
 });
 
-ruta.get('/', (req,res)=>{
-    res.json('Respuesta a peticion GET de USUARIOS funcionando correctamente...');
-});
 
 async function crearUsuario(body){
     let usuario = new Usuario ({
